@@ -1,0 +1,70 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class BrokenLinkTestRunner {
+
+	public static void main(String[] args) {
+		WebDriver driver;
+		LocalDateTime dateTime = LocalDateTime.now();
+		System.setProperty("webdriver.chrome.driver", "F:/Murali/Selenium/chromedriver_win32/chromedriver.exe");
+		DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
+		System.out.println("**********START*************" + dateTime.format(formatter) + "****************");
+		driver = new ChromeDriver(); // Launch Chrome driver
+
+		driver.manage().window().maximize(); // maximize windows
+		driver.manage().deleteAllCookies(); // delete all cookies
+		// dynamic wait time
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		// driver.get("https://ui.freecrm.com");
+		driver.get("https://www.spicejet.com/");
+		String title = driver.getTitle();
+		System.out.println("Title of the browser is :" + title);
+		// dynamic wait time
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		// Enter Username
+		// driver.findElement(By.name("email")).sendKeys("smuralidharan24@gmail.com");
+		// Enter password
+		// driver.findElement(By.name("password")).sendKeys("FreeCrm@1234");
+		// Click on Login Button
+		// driver.findElement(By.xpath("//div[@class='ui fluid large blue submit
+		// button']")).click();
+
+		// get the list of all the links on the web page
+
+		List<WebElement> linksList = driver.findElements(By.tagName("a"));
+		linksList.addAll(driver.findElements(By.tagName("img")));
+
+		List<WebElement> activeLinks = new ArrayList<WebElement>();
+
+		// Iterate linksList, exclude all the images/link that does not have href
+		// attribute
+		for (int i = 0; i < linksList.size(); i++) {
+			System.out.println(linksList.get(i).getText());
+			if (linksList.get(i).getAttribute("href") != null) {
+				activeLinks.add(linksList.get(i));
+			}
+
+		}
+		// Get the size of active link
+		System.out.println(activeLinks.size());
+
+		for (int i = 0; i < activeLinks.size(); i++) {
+			System.out.println(activeLinks.get(i).getText());
+		}
+		System.out.println("***********************************************************");
+		driver.quit();
+		// DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
+		System.out.println("*********THE END*************" + dateTime.format(formatter) + "****************");
+
+	}
+
+}

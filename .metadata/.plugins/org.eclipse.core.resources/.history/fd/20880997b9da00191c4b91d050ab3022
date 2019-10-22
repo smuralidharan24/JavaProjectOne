@@ -1,0 +1,11 @@
+package Beginers.oops_Interface;
+
+public class Bird implements Flyable {
+
+	public void fly() {
+		System.out.println("Bird flys with wings");
+		
+	}
+
+	
+}

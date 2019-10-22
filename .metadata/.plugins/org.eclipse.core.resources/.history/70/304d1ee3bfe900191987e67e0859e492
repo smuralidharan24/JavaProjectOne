@@ -1,0 +1,14 @@
+package Tips;
+
+enum Season {
+	WINTER, SPRING, SUMMER, FALL;
+}
+
+public class EnumRunner {
+
+	public static void main(String[] args) {
+		String season = "Garbage";
+
+	}
+
+}

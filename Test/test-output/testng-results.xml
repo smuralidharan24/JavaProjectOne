@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="26" passed="23" failed="2" skipped="1">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2019-10-19T15:05:21 BST" name="TestNG Suite1" finished-at="2019-10-19T15:06:13 BST" duration-ms="51863">
+    <groups>
+      <group name="Group1">
+        <method signature="GoogleTest.googleLogoTest()[pri:1, instance:LearningTestNG.GoogleTest@38c5cc4c]" name="googleLogoTest" class="LearningTestNG.GoogleTest"/>
+        <method signature="GoogleTest.googleTitleTest()[pri:1, instance:LearningTestNG.GoogleTest@38c5cc4c]" name="googleTitleTest" class="LearningTestNG.GoogleTest"/>
+      </group> <!-- Group1 -->
+      <group name="Group2">
+        <method signature="GoogleTest.gmailLinkTest()[pri:2, instance:LearningTestNG.GoogleTest@38c5cc4c]" name="gmailLinkTest" class="LearningTestNG.GoogleTest"/>
+        <method signature="GoogleTest.storeLinkTest()[pri:2, instance:LearningTestNG.GoogleTest@38c5cc4c]" name="storeLinkTest" class="LearningTestNG.GoogleTest"/>
+      </group> <!-- Group2 -->
+      <group name="Group3">
+        <method signature="GoogleTest.imagesLinkTest()[pri:3, instance:LearningTestNG.GoogleTest@38c5cc4c]" name="imagesLinkTest" class="LearningTestNG.GoogleTest"/>
+      </group> <!-- Group3 -->
+    </groups>
+    <test started-at="2019-10-19T15:05:21 BST" name="Learning TestNG" finished-at="2019-10-19T15:06:13 BST" duration-ms="51863">
+      <class name="LearningTestNG.GoogleTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:LearningTestNG.GoogleTest@38c5cc4c]" started-at="2019-10-19T15:05:21 BST" name="setUp" finished-at="2019-10-19T15:05:21 BST" duration-ms="19" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:LearningTestNG.GoogleTest@38c5cc4c]" started-at="2019-10-19T15:05:23 BST" name="launchBrowser" finished-at="2019-10-19T15:05:30 BST" duration-ms="7457" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="googleLogoTest()[pri:1, instance:LearningTestNG.GoogleTest@38c5cc4c]" started-at="2019-10-19T15:05:30 BST" name="googleLogoTest" finished-at="2019-10-19T15:05:30 BST" duration-ms="153" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- googleLogoTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:LearningTestNG.GoogleTest@38c5cc4c]" started-at="2019-10-19T15:05:30 BST" name="tearDown" finished-at="2019-10-19T15:05:32 BST" duration-ms="1256" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:LearningTestNG.GoogleTest@38c5cc4c]" started-at="2019-10-19T15:05:32 BST" name="launchBrowser" finished-at="2019-10-19T15:05:37 BST" duration-ms="5235" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="googleTitleTest()[pri:1, instance:LearningTestNG.GoogleTest@38c5cc4c]" started-at="2019-10-19T15:05:37 BST" name="googleTitleTest" finished-at="2019-10-19T15:05:37 BST" duration-ms="68" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- googleTitleTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:LearningTestNG.GoogleTest@38c5cc4c]" started-at="2019-10-19T15:05:37 BST" name="tearDown" finished-at="2019-10-19T15:05:38 BST" duration-ms="1121" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:LearningTestNG.GoogleTest@38c5cc4c]" started-at="2019-10-19T15:05:38 BST" name="launchBrowser" finished-at="2019-10-19T15:05:44 BST" duration-ms="5612" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="gmailLinkTest()[pri:2, instance:LearningTestNG.GoogleTest@38c5cc4c]" started-at="2019-10-19T15:05:44 BST" name="gmailLinkTest" finished-at="2019-10-19T15:05:44 BST" duration-ms="108" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- gmailLinkTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:LearningTestNG.GoogleTest@38c5cc4c]" started-at="2019-10-19T15:05:44 BST" name="tearDown" finished-at="2019-10-19T15:05:45 BST" duration-ms="1206" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:LearningTestNG.GoogleTest@38c5cc4c]" started-at="2019-10-19T15:05:45 BST" name="launchBrowser" finished-at="2019-10-19T15:05:50 BST" duration-ms="5344" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="storeLinkTest()[pri:2, instance:LearningTestNG.GoogleTest@38c5cc4c]" started-at="2019-10-19T15:05:50 BST" name="storeLinkTest" finished-at="2019-10-19T15:05:51 BST" duration-ms="116" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- storeLinkTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:LearningTestNG.GoogleTest@38c5cc4c]" started-at="2019-10-19T15:05:51 BST" name="tearDown" finished-at="2019-10-19T15:05:52 BST" duration-ms="1144" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:LearningTestNG.GoogleTest@38c5cc4c]" started-at="2019-10-19T15:05:52 BST" name="launchBrowser" finished-at="2019-10-19T15:05:57 BST" duration-ms="5550" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="imagesLinkTest()[pri:3, instance:LearningTestNG.GoogleTest@38c5cc4c]" started-at="2019-10-19T15:05:57 BST" name="imagesLinkTest" finished-at="2019-10-19T15:05:57 BST" duration-ms="119" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- imagesLinkTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:LearningTestNG.GoogleTest@38c5cc4c]" started-at="2019-10-19T15:05:57 BST" name="tearDown" finished-at="2019-10-19T15:05:59 BST" duration-ms="1204" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="deleteAllCookies()[pri:0, instance:LearningTestNG.GoogleTest@38c5cc4c]" started-at="2019-10-19T15:06:13 BST" name="deleteAllCookies" finished-at="2019-10-19T15:06:13 BST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteAllCookies -->
+      </class> <!-- LearningTestNG.GoogleTest -->
+      <class name="LearningTestNG.TestNgFeatures">
+        <test-method signature="test1()[pri:0, instance:LearningTestNG.TestNgFeatures@3c72f59f]" started-at="2019-10-19T15:06:12 BST" name="test1" finished-at="2019-10-19T15:06:12 BST" duration-ms="2" status="FAIL">
+          <exception class="java.lang.ArithmeticException">
+            <message>
+              <![CDATA[/ by zero]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.ArithmeticException: / by zero
+at LearningTestNG.TestNgFeatures.test1(TestNgFeatures.java:10)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.ArithmeticException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method signature="test2()[pri:0, instance:LearningTestNG.TestNgFeatures@3c72f59f]" started-at="2019-10-19T15:06:13 BST" name="test2" finished-at="2019-10-19T15:06:13 BST" depends-on-methods="LearningTestNG.TestNgFeatures.test1" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method TestNgFeatures.test2()[pri:0, instance:LearningTestNG.TestNgFeatures@3c72f59f] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method TestNgFeatures.test2()[pri:0, instance:LearningTestNG.TestNgFeatures@3c72f59f] depends on not successfully finished methods
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:99)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test2 -->
+        <test-method signature="test4()[pri:0, instance:LearningTestNG.TestNgFeatures@3c72f59f]" started-at="2019-10-19T15:06:13 BST" name="test4" finished-at="2019-10-19T15:06:13 BST" duration-ms="26" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test4 -->
+        <test-method signature="test3()[pri:0, instance:LearningTestNG.TestNgFeatures@3c72f59f]" started-at="2019-10-19T15:06:13 BST" name="test3" finished-at="2019-10-19T15:06:13 BST" depends-on-methods="LearningTestNG.TestNgFeatures.test4" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test3 -->
+      </class> <!-- LearningTestNG.TestNgFeatures -->
+      <class name="LearningTestNG.TestNgBasics">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:LearningTestNG.TestNgBasics@78e94dcf]" started-at="2019-10-19T15:05:21 BST" name="setUp" finished-at="2019-10-19T15:05:21 BST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:LearningTestNG.TestNgBasics@78e94dcf]" started-at="2019-10-19T15:05:21 BST" name="launchBrowser" finished-at="2019-10-19T15:05:21 BST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method is-config="true" signature="login()[pri:0, instance:LearningTestNG.TestNgBasics@78e94dcf]" started-at="2019-10-19T15:06:12 BST" name="login" finished-at="2019-10-19T15:06:12 BST" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method is-config="true" signature="enterURL()[pri:0, instance:LearningTestNG.TestNgBasics@78e94dcf]" started-at="2019-10-19T15:06:12 BST" name="enterURL" finished-at="2019-10-19T15:06:12 BST" duration-ms="10" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enterURL -->
+        <test-method signature="googleLogoTest()[pri:0, instance:LearningTestNG.TestNgBasics@78e94dcf]" started-at="2019-10-19T15:06:12 BST" name="googleLogoTest" finished-at="2019-10-19T15:06:12 BST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- googleLogoTest -->
+        <test-method is-config="true" signature="logOut()[pri:0, instance:LearningTestNG.TestNgBasics@78e94dcf]" started-at="2019-10-19T15:06:12 BST" name="logOut" finished-at="2019-10-19T15:06:12 BST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logOut -->
+        <test-method is-config="true" signature="enterURL()[pri:0, instance:LearningTestNG.TestNgBasics@78e94dcf]" started-at="2019-10-19T15:06:12 BST" name="enterURL" finished-at="2019-10-19T15:06:12 BST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enterURL -->
+        <test-method signature="googleTitleMethod()[pri:0, instance:LearningTestNG.TestNgBasics@78e94dcf]" started-at="2019-10-19T15:06:12 BST" name="googleTitleMethod" finished-at="2019-10-19T15:06:12 BST" duration-ms="8" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- googleTitleMethod -->
+        <test-method is-config="true" signature="logOut()[pri:0, instance:LearningTestNG.TestNgBasics@78e94dcf]" started-at="2019-10-19T15:06:12 BST" name="logOut" finished-at="2019-10-19T15:06:12 BST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logOut -->
+        <test-method is-config="true" signature="enterURL()[pri:0, instance:LearningTestNG.TestNgBasics@78e94dcf]" started-at="2019-10-19T15:06:12 BST" name="enterURL" finished-at="2019-10-19T15:06:12 BST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- enterURL -->
+        <test-method signature="searchTest()[pri:0, instance:LearningTestNG.TestNgBasics@78e94dcf]" started-at="2019-10-19T15:06:12 BST" name="searchTest" finished-at="2019-10-19T15:06:12 BST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchTest -->
+        <test-method is-config="true" signature="logOut()[pri:0, instance:LearningTestNG.TestNgBasics@78e94dcf]" started-at="2019-10-19T15:06:12 BST" name="logOut" finished-at="2019-10-19T15:06:12 BST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logOut -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:LearningTestNG.TestNgBasics@78e94dcf]" started-at="2019-10-19T15:06:12 BST" name="closeBrowser" finished-at="2019-10-19T15:06:12 BST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="deleteAllCookies()[pri:0, instance:LearningTestNG.TestNgBasics@78e94dcf]" started-at="2019-10-19T15:06:13 BST" name="deleteAllCookies" finished-at="2019-10-19T15:06:13 BST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteAllCookies -->
+        <test-method is-config="true" signature="generateTestReport()[pri:0, instance:LearningTestNG.TestNgBasics@78e94dcf]" started-at="2019-10-19T15:06:13 BST" name="generateTestReport" finished-at="2019-10-19T15:06:13 BST" duration-ms="34" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- generateTestReport -->
+      </class> <!-- LearningTestNG.TestNgBasics -->
+      <class name="LearningTestNG.ExpectedExceptionTest">
+        <test-method signature="test1()[pri:0, instance:LearningTestNG.ExpectedExceptionTest@358ee631]" started-at="2019-10-19T15:05:23 BST" name="test1" finished-at="2019-10-19T15:05:23 BST" duration-ms="9" status="PASS">
+          <exception class="java.lang.NumberFormatException">
+            <message>
+              <![CDATA[For input string: "100A"]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NumberFormatException: For input string: "100A"
+at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:68)
+at java.base/java.lang.Integer.parseInt(Integer.java:658)
+at java.base/java.lang.Integer.parseInt(Integer.java:776)
+at LearningTestNG.ExpectedExceptionTest.test1(ExpectedExceptionTest.java:10)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:584)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:172)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:804)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:145)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+at org.testng.TestRunner.privateRun(TestRunner.java:770)
+at org.testng.TestRunner.run(TestRunner.java:591)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+at org.testng.TestNG.runSuites(TestNG.java:1032)
+at org.testng.TestNG.run(TestNG.java:1000)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NumberFormatException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+      </class> <!-- LearningTestNG.ExpectedExceptionTest -->
+      <class name="LearningTestNG.GoogleTitleTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:LearningTestNG.GoogleTitleTest@37918c79]" started-at="2019-10-19T15:05:21 BST" name="setUp" finished-at="2019-10-19T15:05:21 BST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:LearningTestNG.GoogleTitleTest@37918c79]" started-at="2019-10-19T15:05:59 BST" name="launchBrowser" finished-at="2019-10-19T15:06:04 BST" duration-ms="5642" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="googleLogoTest()[pri:0, instance:LearningTestNG.GoogleTitleTest@37918c79]" started-at="2019-10-19T15:06:04 BST" name="googleLogoTest" finished-at="2019-10-19T15:06:04 BST" duration-ms="103" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- googleLogoTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:LearningTestNG.GoogleTitleTest@37918c79]" started-at="2019-10-19T15:06:04 BST" name="tearDown" finished-at="2019-10-19T15:06:05 BST" duration-ms="1151" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:LearningTestNG.GoogleTitleTest@37918c79]" started-at="2019-10-19T15:06:05 BST" name="launchBrowser" finished-at="2019-10-19T15:06:11 BST" duration-ms="5687" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method signature="googleTitleTest()[pri:0, instance:LearningTestNG.GoogleTitleTest@37918c79]" started-at="2019-10-19T15:06:11 BST" name="googleTitleTest" finished-at="2019-10-19T15:06:11 BST" duration-ms="29" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- googleTitleTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:LearningTestNG.GoogleTitleTest@37918c79]" started-at="2019-10-19T15:06:11 BST" name="tearDown" finished-at="2019-10-19T15:06:12 BST" duration-ms="1192" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="deleteAllCookies()[pri:0, instance:LearningTestNG.GoogleTitleTest@37918c79]" started-at="2019-10-19T15:06:13 BST" name="deleteAllCookies" finished-at="2019-10-19T15:06:13 BST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteAllCookies -->
+      </class> <!-- LearningTestNG.GoogleTitleTest -->
+      <class name="LearningTestNG.InvocationCountTest">
+        <test-method signature="sum()[pri:0, instance:LearningTestNG.InvocationCountTest@ec756bd]" started-at="2019-10-19T15:06:12 BST" name="sum" finished-at="2019-10-19T15:06:12 BST" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sum -->
+        <test-method signature="sum()[pri:0, instance:LearningTestNG.InvocationCountTest@ec756bd]" started-at="2019-10-19T15:06:12 BST" name="sum" finished-at="2019-10-19T15:06:12 BST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sum -->
+        <test-method signature="sum()[pri:0, instance:LearningTestNG.InvocationCountTest@ec756bd]" started-at="2019-10-19T15:06:12 BST" name="sum" finished-at="2019-10-19T15:06:12 BST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sum -->
+        <test-method signature="sum()[pri:0, instance:LearningTestNG.InvocationCountTest@ec756bd]" started-at="2019-10-19T15:06:12 BST" name="sum" finished-at="2019-10-19T15:06:12 BST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sum -->
+        <test-method signature="sum()[pri:0, instance:LearningTestNG.InvocationCountTest@ec756bd]" started-at="2019-10-19T15:06:12 BST" name="sum" finished-at="2019-10-19T15:06:12 BST" duration-ms="9" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sum -->
+        <test-method signature="sum()[pri:0, instance:LearningTestNG.InvocationCountTest@ec756bd]" started-at="2019-10-19T15:06:12 BST" name="sum" finished-at="2019-10-19T15:06:12 BST" duration-ms="13" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sum -->
+        <test-method signature="sum()[pri:0, instance:LearningTestNG.InvocationCountTest@ec756bd]" started-at="2019-10-19T15:06:12 BST" name="sum" finished-at="2019-10-19T15:06:12 BST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sum -->
+        <test-method signature="sum()[pri:0, instance:LearningTestNG.InvocationCountTest@ec756bd]" started-at="2019-10-19T15:06:12 BST" name="sum" finished-at="2019-10-19T15:06:12 BST" duration-ms="13" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sum -->
+        <test-method signature="sum()[pri:0, instance:LearningTestNG.InvocationCountTest@ec756bd]" started-at="2019-10-19T15:06:12 BST" name="sum" finished-at="2019-10-19T15:06:12 BST" duration-ms="9" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sum -->
+        <test-method signature="sum()[pri:0, instance:LearningTestNG.InvocationCountTest@ec756bd]" started-at="2019-10-19T15:06:12 BST" name="sum" finished-at="2019-10-19T15:06:12 BST" duration-ms="8" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- sum -->
+      </class> <!-- LearningTestNG.InvocationCountTest -->
+      <class name="LearningTestNG.ExceptionTimeOutTest">
+        <test-method signature="infinitLoopTest()[pri:0, instance:LearningTestNG.ExceptionTimeOutTest@233fe9b6]" started-at="2019-10-19T15:05:21 BST" name="infinitLoopTest" finished-at="2019-10-19T15:05:23 BST" duration-ms="2039" status="FAIL">
+          <exception class="org.testng.internal.thread.ThreadTimeoutException">
+            <message>
+              <![CDATA[Method LearningTestNG.ExceptionTimeOutTest.infinitLoopTest() didn't finish within the time-out 2000]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.internal.thread.ThreadTimeoutException: Method LearningTestNG.ExceptionTimeOutTest.infinitLoopTest() didn't finish within the time-out 2000
+at java.base@12.0.2/java.io.FileOutputStream.writeBytes(Native Method)
+at java.base@12.0.2/java.io.FileOutputStream.write(FileOutputStream.java:348)
+at java.base@12.0.2/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+at java.base@12.0.2/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+at java.base@12.0.2/java.io.PrintStream.write(PrintStream.java:561)
+at java.base@12.0.2/sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:233)
+at java.base@12.0.2/sun.nio.cs.StreamEncoder.implFlushBuffer(StreamEncoder.java:312)
+at java.base@12.0.2/sun.nio.cs.StreamEncoder.flushBuffer(StreamEncoder.java:104)
+at java.base@12.0.2/java.io.OutputStreamWriter.flushBuffer(OutputStreamWriter.java:184)
+at java.base@12.0.2/java.io.PrintStream.write(PrintStream.java:606)
+at java.base@12.0.2/java.io.PrintStream.print(PrintStream.java:676)
+at java.base@12.0.2/java.io.PrintStream.println(PrintStream.java:812)
+at app//LearningTestNG.ExceptionTimeOutTest.infinitLoopTest(ExceptionTimeOutTest.java:11)
+at java.base@12.0.2/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base@12.0.2/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base@12.0.2/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base@12.0.2/java.lang.reflect.Method.invoke(Method.java:567)
+at app//org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at app//org.testng.internal.InvokeMethodRunnable.runOne(InvokeMethodRunnable.java:51)
+at app//org.testng.internal.InvokeMethodRunnable.run(InvokeMethodRunnable.java:41)
+at java.base@12.0.2/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+at java.base@12.0.2/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base@12.0.2/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+at java.base@12.0.2/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+at java.base@12.0.2/java.lang.Thread.run(Thread.java:835)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.internal.thread.ThreadTimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- infinitLoopTest -->
+      </class> <!-- LearningTestNG.ExceptionTimeOutTest -->
+    </test> <!-- Learning TestNG -->
+  </suite> <!-- TestNG Suite1 -->
+</testng-results>

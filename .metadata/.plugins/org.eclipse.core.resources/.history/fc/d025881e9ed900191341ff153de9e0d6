@@ -1,0 +1,18 @@
+package Beginers.oops_Inheritence;
+
+public class EmployeeRunner {
+
+	public static void main(String[] args) {
+
+		Employee employee = new Employee("Mr", "Capgemini", "Level 8", 75000.00);
+		// Person person = new Person();
+
+		//employee.setName("Murali");
+		employee.setEmail("ms@gmail.com");
+		employee.setPhoneNumber("07972934024");
+		System.out.println(employee);
+		// System.out.println(person);
+
+	}
+
+}

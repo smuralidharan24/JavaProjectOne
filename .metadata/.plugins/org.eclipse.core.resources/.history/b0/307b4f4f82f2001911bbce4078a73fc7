@@ -1,0 +1,86 @@
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class BrokenLinkTestRunner {
+
+	public static void main(String[] args) throws MalformedURLException, IOException {
+		WebDriver driver;
+		LocalDateTime dateTime = LocalDateTime.now();
+		System.setProperty("webdriver.chrome.driver", "F:/Murali/Selenium/chromedriver_win32/chromedriver.exe");
+		DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
+		System.out.println("**********START*************" + dateTime.format(formatter) + "****************");
+		driver = new ChromeDriver(); // Launch Chrome driver
+
+		driver.manage().window().maximize(); // maximize windows
+		driver.manage().deleteAllCookies(); // delete all cookies
+		// dynamic wait time
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		// driver.get("https://ui.freecrm.com");
+		driver.get("https://www.spicejet.com/");
+		String title = driver.getTitle();
+		System.out.println("Title of the browser is :" + title);
+		// dynamic wait time
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		// Enter Username
+		// driver.findElement(By.name("email")).sendKeys("smuralidharan24@gmail.com");
+		// Enter password
+		// driver.findElement(By.name("password")).sendKeys("FreeCrm@1234");
+		// Click on Login Button
+		// driver.findElement(By.xpath("//div[@class='ui fluid large blue submit
+		// button']")).click();
+
+		// get the list of all the links on the web page
+
+		List<WebElement> linksList = driver.findElements(By.tagName("a"));
+		linksList.addAll(driver.findElements(By.tagName("img")));
+
+		List<WebElement> activeLinks = new ArrayList<WebElement>();
+
+		System.out.println(linksList.size());
+
+		// Iterate linksList, exclude all the images/link that does not have href
+		// attribute
+		for (int i = 0; i < linksList.size(); i++) {
+			// System.out.println(linksList.get(i).getText());
+			//System.out.println(linksList.get(i).getAttribute("href"));
+			if (linksList.get(i).getAttribute("href") != null
+					&& (!linksList.get(i).getAttribute("href").contains("javascript"))) {
+				activeLinks.add(linksList.get(i));
+			}
+
+		}
+		// Get the size of active links
+		System.out.println(activeLinks.size());
+
+		// Check the href URL with HttpURLConnection API
+		for (int i = 0; i < activeLinks.size(); i++) {
+			//System.out.println(activeLinks.get(i).getText());
+			HttpURLConnection connect = (HttpURLConnection) new URL(activeLinks.get(i).getAttribute("href"))
+					.openConnection();
+			connect.connect();
+			String response = connect.getResponseMessage(); // 200-OK/404-Not found/500-Internal error
+			connect.disconnect();
+			System.out.println(activeLinks.get(i).getAttribute("href") + "--->" + response);
+		}
+
+		System.out.println("***********************************************************");
+		driver.quit();
+		// DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
+		System.out.println("*********THE END*************" + dateTime.format(formatter) + "****************");
+
+	}
+
+}

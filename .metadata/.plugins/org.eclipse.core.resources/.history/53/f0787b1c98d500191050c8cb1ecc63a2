@@ -1,0 +1,10 @@
+package Beginers.oops;
+
+public class MotorBike {
+
+	int speed;
+
+	void startBike(String bikeName) {
+		System.out.printf("%s Bike Started", bikeName).println();
+	}
+}

@@ -1,0 +1,39 @@
+package Beginers.oops;
+
+public class MotorBike {
+
+	MotorBike (){//No argument constructor
+		this(9);// this is calling other constructor
+	}
+	
+	MotorBike(int speed) { // This is a constructor using the classname as the name
+		this.speed = speed;
+	}
+
+	private int speed; // member variable
+
+	public int getSpeed() {
+		return speed;
+	}
+
+	public void setSpeed(int speed) {
+		// this.speed = speed;
+		// System.out.println(speed);
+		// System.out.println(this.speed);
+		if (speed > 0) {
+			this.speed = speed;
+		}
+	}
+
+	public void increaseSpeed(int howMuch) {
+		setSpeed(this.speed + howMuch);
+	}
+
+	public void decreaseSpeed(int howMuch) {
+		setSpeed(this.speed - howMuch);
+	}
+
+	void startBike(String bikeName) {
+		System.out.printf("%s Bike Started", bikeName).println();
+	}
+}

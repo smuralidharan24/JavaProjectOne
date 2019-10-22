@@ -1,0 +1,50 @@
+package Beginers2;
+
+import java.util.Scanner;
+
+public class MonthDayRunner {
+
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Enter Weekday between 0 to 6 to find isWeekday:");
+		int number1 = scanner.nextInt();
+		isWeekday(number1);
+		System.out.print("Enter Month number between 1 to 12 to retrun Month name:");
+		int number2 = scanner.nextInt();
+		System.out.print("Enter day number between 0 to 6 to return week name:");
+		int number3 = scanner.nextInt();
+
+		// System.out.println("The 1st number you entered is - " + number1);
+		// System.out.println("The 2nd number you entered is - " + number2);
+
+		// int operationChoosen = scanner.nextInt();
+
+		// performOperationUsingNestedIfElse(number1, number2, operationChoosen);
+		// switchCase(number1, number2, number3);
+
+	}
+
+	public static boolean isWeekday(int dayNumber) {
+		switch (dayNumber) {
+		case 0:
+			return false;
+		case 1:
+			return true;
+		case 2:
+			return true;
+		case 3:
+			return true;
+		case 4:
+			return true;
+		case 5:
+			return true;
+		case 6:
+			return false;
+		default:
+			System.out.println("invalid entry");
+		}
+
+	}
+
+}

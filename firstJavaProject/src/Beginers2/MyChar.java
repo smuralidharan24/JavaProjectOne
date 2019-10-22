@@ -1,0 +1,68 @@
+package Beginers2;
+
+public class MyChar {
+
+	private char inputChar;
+
+	public MyChar(char inputChar) {
+		this.inputChar = inputChar;
+		System.out.printf("The input value is %c", inputChar).println();
+
+	}
+
+	public boolean isVowel() {
+		if (this.inputChar == 'e' || this.inputChar == 'i' || this.inputChar == 'o' || this.inputChar == 'u'
+				|| this.inputChar == 'E' || this.inputChar == 'I' || this.inputChar == 'O' || this.inputChar == 'U'
+				|| Character.toUpperCase(this.inputChar) == 'A') {
+			return true;
+		}
+
+		return false;
+	}
+
+	public boolean isDigit() {
+		int asciiValue = this.inputChar;
+		if (asciiValue >= 48 && asciiValue <= 57) {
+			return true;
+		}
+
+		return false;
+	}
+
+	public boolean isAlphabet() {
+		int asciiValue = this.inputChar;
+		if (asciiValue >= 65 && asciiValue <= 90 || asciiValue >= 97 && asciiValue <= 122) {
+			return true;
+		}
+
+		return false;
+	}
+
+	public boolean isConsonant() {
+		if (isAlphabet() == true && isVowel() == false) {
+			return true;
+		}
+
+		return false;
+
+	}
+
+	public static void printLowerCaseAlphabet() {
+		System.out.println("Alphabets in lower case");
+		for (int i = 97; i <= 122; i++) {
+			char ch = (char) i;
+			System.out.print(ch);
+		}
+
+	}
+
+	public static void printUpperCaseAlphabet() {
+		System.out.println();
+		System.out.println("Alphabets in Upper case");
+		for (char i = 'A'; i <= 'Z'; i++) {
+			System.out.print(i);
+		}
+
+	}
+
+}

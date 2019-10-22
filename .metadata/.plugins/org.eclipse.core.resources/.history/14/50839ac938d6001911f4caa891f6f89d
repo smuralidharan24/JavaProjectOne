@@ -1,0 +1,29 @@
+package Beginers2;
+
+public class MyChar {
+
+	private char inputChar;
+
+	public MyChar(char inputChar) {
+		this.inputChar = inputChar;
+	}
+
+	public boolean isVowel() {
+		if (this.inputChar == 'a' || this.inputChar == 'e' || this.inputChar == 'i' || this.inputChar == 'o'
+				|| this.inputChar == 'u' || this.inputChar == 'A' || this.inputChar == 'E' || this.inputChar == 'I'
+				|| this.inputChar == 'O' || this.inputChar == 'U') {
+			return true;
+		}
+
+		return false;
+	}
+
+	public boolean isDigit() {
+		int asciiValue = (int)this.inputChar;
+		if (asciiValue >= 48 && asciiValue <= 57)
+		return true;
+		
+		return false;
+	}
+
+}

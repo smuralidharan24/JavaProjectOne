@@ -1,0 +1,15 @@
+package TipsDifferentPackage;
+
+public class MethodAccessRunnerInSamePackage {
+
+	public static void main(String[] args) {
+		ExampleClass exampleClass = new ExampleClass();
+		exampleClass.publicMethod();
+		exampleClass.protectMethod();
+		// exampleClass.privateMethod(); //Only private will not be accessible in same
+		// package
+		exampleClass.defaultMethod();
+
+	}
+
+}

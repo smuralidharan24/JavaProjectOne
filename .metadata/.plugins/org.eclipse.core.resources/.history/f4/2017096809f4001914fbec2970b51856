@@ -1,0 +1,36 @@
+package com.crm.qa.testsuite;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+
+import com.crm.qa.base.TestBase;
+import com.crm.qa.pages.LoginPage;
+
+public class LoginPageTest extends TestBase {
+
+	public LoginPageTest() {
+		super();
+	}
+
+	WebDriver driver;
+	public LocalDateTime dateTime = LocalDateTime.now();
+
+	@BeforeSuite // Step 1
+	public void preConditions() {
+		System.setProperty("webdriver.chrome.driver", "F:/Murali/Selenium/chromedriver_win32/chromedriver.exe");
+		DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
+		System.out.println("**********START*************" + dateTime.format(formatter) + "****************");
+	}
+
+	@BeforeMethod
+	public void setUp() {
+		initialization();
+		loginPage = new LoginPage();
+
+	}
+
+}

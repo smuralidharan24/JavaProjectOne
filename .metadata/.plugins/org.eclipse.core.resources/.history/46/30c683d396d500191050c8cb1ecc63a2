@@ -1,0 +1,11 @@
+package Beginers.oops;
+
+public class Book {
+
+	int noOfCopies;
+
+	// void author() {
+	// System.out.println("The author of the book is Murali");
+	// }
+
+}

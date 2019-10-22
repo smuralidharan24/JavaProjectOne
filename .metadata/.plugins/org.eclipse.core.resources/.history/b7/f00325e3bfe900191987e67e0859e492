@@ -1,0 +1,19 @@
+package Tips;
+
+enum Season {
+	WINTER, SPRING, SUMMER, FALL;
+}
+
+public class EnumRunner {
+
+	public static void main(String[] args) {
+		Season fall = Season.FALL;
+		System.out.println(fall);
+		
+		Season winter = Season.valueOf("WINTER");
+		System.out.println(winter);
+		
+
+	}
+
+}

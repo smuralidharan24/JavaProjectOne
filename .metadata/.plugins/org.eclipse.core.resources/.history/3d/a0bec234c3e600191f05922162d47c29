@@ -1,0 +1,19 @@
+package Exceptionhandling;
+
+import java.util.Scanner;
+
+public class FinallyRunner {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+
+		int[] numbers = { 1, 2, 3, 4 };
+
+		int number = numbers[5];
+
+		System.out.println("Before Scanner Close");
+
+		scanner.close(); // if not called there might be resource or memory leakage
+	}
+
+}

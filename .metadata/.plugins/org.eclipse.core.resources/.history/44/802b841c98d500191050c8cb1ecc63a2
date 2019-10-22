@@ -1,0 +1,14 @@
+package Beginers.oops;
+
+public class MotorBike {
+
+	private int speed; //member variable
+	
+	void setSpeed(int speed) { //Local variable
+		this.speed = speed;
+	}
+	
+	void startBike(String bikeName) {
+		System.out.printf("%s Bike Started", bikeName).println();
+	}
+}

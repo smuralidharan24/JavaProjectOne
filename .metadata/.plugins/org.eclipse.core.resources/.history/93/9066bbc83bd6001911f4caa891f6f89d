@@ -1,0 +1,50 @@
+package Beginers2;
+
+public class MyChar {
+
+	private char inputChar;
+
+	public MyChar(char inputChar) {
+		this.inputChar = inputChar;
+	}
+
+	// System.out.printf("The input value is %s",this.inputChar).println();
+
+	public boolean isVowel() {
+		if (this.inputChar == 'a' || this.inputChar == 'e' || this.inputChar == 'i' || this.inputChar == 'o'
+				|| this.inputChar == 'u' || this.inputChar == 'A' || this.inputChar == 'E' || this.inputChar == 'I'
+				|| this.inputChar == 'O' || this.inputChar == 'U') {
+			return true;
+		}
+
+		return false;
+	}
+
+	public boolean isDigit() {
+		int asciiValue = this.inputChar;
+		if (asciiValue >= 48 && asciiValue <= 57) {
+			return true;
+		}
+
+		return false;
+	}
+
+	public boolean isAlphabet() {
+		int asciiValue = this.inputChar;
+		if (asciiValue >= 65 && asciiValue <= 90 || asciiValue >= 97 && asciiValue <= 122) {
+			return true;
+		}
+
+		return false;
+	}
+
+	public boolean isConsonant() {
+		if (isAlphabet() == true && isVowel() == false) {
+			return true;
+		}
+
+		return false;
+
+	}
+
+}

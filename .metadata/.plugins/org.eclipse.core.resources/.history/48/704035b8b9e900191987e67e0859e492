@@ -1,0 +1,14 @@
+package Tips;
+
+public class BlockRunner {
+
+	public static void main(String[] args) {
+		System.out.println(0x80000000);
+		
+		if (3 > 2) {
+			System.out.println("Yes 3 is greater than 2");
+		}
+
+	}
+
+}

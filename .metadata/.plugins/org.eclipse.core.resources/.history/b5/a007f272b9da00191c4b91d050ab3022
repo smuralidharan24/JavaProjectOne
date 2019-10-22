@@ -1,0 +1,12 @@
+package Beginers.oops_Interface;
+
+public class Brid implements Flyable {
+
+	@Override
+	public void fly() {
+		System.out.println("Brid flys with wings");
+		
+	}
+
+	
+}

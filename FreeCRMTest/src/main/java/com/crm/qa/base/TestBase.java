@@ -1,0 +1,149 @@
+package com.crm.qa.base;
+
+import java.io.FileInputStream;
+import java.time.LocalDateTime;
+import java.util.Properties;
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
+
+import com.crm.qa.utilities.TestUtility;
+import com.crm.qa.utilities.WebEventListener;
+
+public class TestBase {
+
+	public static WebDriver driver;
+	public static EventFiringWebDriver e_driver;
+	public static WebEventListener eventListener;
+	public static Properties properties;
+	public LocalDateTime dateTime = LocalDateTime.now();
+	public static Actions action;
+
+	public TestBase() {
+
+		try {
+			properties = new Properties();
+			FileInputStream readConfigFile = new FileInputStream(
+					"C:/Users/Murali/eclipse-workspace/FreeCRMTest/src/main/java/com/crm/qa/config/config.properties");
+			properties.load(readConfigFile);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public static void initialization() {
+		String browserName = properties.getProperty("browser");
+		String SYSTEM_PROPERTY_CHROME_DRIVER = properties.getProperty("SYSTEM_PROPERTY_CHROME_DRIVER");
+		String SYSTEM_PROPERTY_CHROME_PATH = properties.getProperty("SYSTEM_PROPERTY_CHROME_PATH");
+		if (browserName.contains("chrome")) {
+			System.setProperty(SYSTEM_PROPERTY_CHROME_DRIVER, SYSTEM_PROPERTY_CHROME_PATH);
+			driver = new ChromeDriver();
+		} else if (browserName.contains("Firefox")) {
+			System.setProperty(SYSTEM_PROPERTY_CHROME_DRIVER, SYSTEM_PROPERTY_CHROME_PATH);
+			driver = new ChromeDriver();
+		} else {
+			System.out.println("Not a valid browser");
+		}
+
+		e_driver = new EventFiringWebDriver(driver);
+		// Now create object of EventListenerHandler to register it with
+		// EventFiringWebDriver
+		eventListener = new WebEventListener();
+		e_driver.register(eventListener);
+		driver = e_driver;
+
+		driver.manage().window().maximize(); // Maximise windows
+		driver.manage().deleteAllCookies(); // delete all cookies
+		// dynamic wait time
+		driver.manage().timeouts().pageLoadTimeout(TestUtility.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(TestUtility.IMPLICIT_WAIT, TimeUnit.SECONDS);
+
+		driver.get(properties.getProperty("url"));
+		String title = driver.getTitle();
+		System.out.println("Title of the browser is :" + title);
+	}
+
+	public static String randomCity() throws Exception {
+		String cityString[] = { "Bath", "Birmingham", "Bradford", "Brighton", "and", "Hove", "Bristol", "Cambridge",
+				"Canterbury", "Carlisle", "Chester", "Chichester", "Coventry", "Derby", "Durham", "Exeter",
+				"Gloucester", "Hereford", "Kingston", "Lancaster", "Leeds", "Leicester", "Lichfield", "Lincoln",
+				"Liverpool", "City of London", "Manchester", "Newcastle upon Tyne", "Norwich", "Nottingham", "Oxford",
+				"Peterborough", "Plymouth", "Portsmouth", "Preston", "Ripon", "Salford", "Salisbury", "Sheffield",
+				"Southampton", "St Albans", "Stoke-on-Trent", "Sunderland", "Truro", "Wakefield", "Wells",
+				"Westminster", "Winchester", "Wolverhampton", "Worcester", "York", "Hounslow", "Reading", "Chennai",
+				"India" };
+		int randomPosition;
+		String randomCity = "";
+		randomPosition = generateRandomInt();
+		randomCity = randomCity + cityString[randomPosition];
+		System.out.println(randomCity);
+		return randomCity;
+	}
+
+	public static String randomPostcode() throws Exception {
+		String cityString[] = { "DL150UT", "SW153AJ", "PE318DD", "BL69GY", "BH214BT", "DA37DA", "RM14XS", "CT48HH",
+				"EX152DL", "CA27QN", "B146PG", "AB544HN", "DE61LR", "DN401NP", "TR115NW", "PO123BX", "BH235BB",
+				"TR152NE", "HP189HG", "DG12PB", "SN160EZ", "DE119EE", "OL70EL", "FK159BT", "TN237XH", "IM61HH",
+				"DN84JN", "KT130QE", "DT12NQ", "TR147EB", "MK58HB", "TS101RQ", "PR84BZ", "NG166JF", "PE218TT",
+				"SW170GW", "DA175AZ", "CV93SX", "S817AH", "L239TJ", "PL207DD", "ME43PN", "CB109TE", "UB77EP", "AB217ED",
+				"BD50AB", "PH74ET", "BT196LG", "PO91RW", "LS118QE", "SO413QE", "FK159BT", "PO123BX", "RM14XS" };
+		int randomPosition;
+		String randomPostcode = "";
+		randomPosition = generateRandomInt();
+		randomPostcode = randomPostcode + cityString[randomPosition];
+		System.out.println(randomPostcode);
+		return randomPostcode;
+	}
+
+	public String randomString(int intValue) throws Exception {
+		char c[] = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+				'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o',
+				'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+		int randomPosition;
+		String randomString = "";
+		for (int i = 0; i < intValue; i++) {
+			randomPosition = generateRandomInt();
+			randomString = randomString + c[randomPosition];
+		}
+		System.out.println(randomString);
+		return randomString;
+	}
+
+	public static int generateRandomInt() {
+		// create instance of Random class
+		Random rand = new Random();
+
+		// Generate random integers in range 0 to 51
+		int rand_int = rand.nextInt(51);
+
+		// Print random integers
+		// System.out.println("Random Integers: " + rand_int);
+		return rand_int;
+	}
+
+	public String generateRandomMobileNumber() {
+		// create instance of Random class
+		Random rand = new Random();
+
+		// 9 digits
+		// Generate random integers in range 0 to 999999999
+		int rand_int = rand.nextInt(999999999);
+		String randomMobileNumber = "7";
+		if (rand_int > 100000000) {
+			randomMobileNumber = randomMobileNumber + rand_int;
+		} else {
+			rand_int = rand_int + 100000000;
+			randomMobileNumber = randomMobileNumber + rand_int;
+			System.out.println("Mobile number was short");
+		}
+		// Print random integers
+		System.out.println("Random Mobile Number: " + randomMobileNumber);
+		return randomMobileNumber;
+	}
+
+}

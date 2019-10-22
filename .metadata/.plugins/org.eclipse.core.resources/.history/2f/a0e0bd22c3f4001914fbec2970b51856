@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+  
+<suite name="TestNG - Free CRM Application Test">
+
+	<listeners>
+		<listener class-name="com.crm.qa.ExtendReportListener.ExtentReporterNG" />
+	</listeners>
+	
+  <test name="Learning POM structure" >
+    <classes>
+       <class name="com.crm.qa.testsuite.ContactsPageTest" />
+       <class name="com.crm.qa.testsuite.HomePageTest" />
+       <class name="com.crm.qa.testsuite.LoginPageTest" />
+    </classes>
+  </test>
+ 
+</suite>

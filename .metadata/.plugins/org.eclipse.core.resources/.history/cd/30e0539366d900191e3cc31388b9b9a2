@@ -1,0 +1,16 @@
+package Beginers.oops_Level2;
+
+public class FanRunner {
+
+	public static void main(String[] args) {
+		Fan fan = new Fan("Polar", 3.5, "white");
+
+		fan.switchOn();
+		fan.setSpeed((byte) 5);
+		System.out.println(fan);
+		fan.switchOff();
+		System.out.println(fan);
+		
+	}
+
+}

@@ -1,0 +1,8 @@
+package Beginers.oops;
+
+public class MotorBike {
+
+	void startBike(String bikeName) {
+		System.out.printf("%s Bike Started", bikeName).println();
+	}
+}

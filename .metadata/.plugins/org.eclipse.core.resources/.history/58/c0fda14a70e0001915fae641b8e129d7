@@ -1,0 +1,16 @@
+package Beginers.oops_Collections;
+
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Queue;
+
+public class QueueRunner {
+
+	public static void main(String[] args) {
+		Queue<String> q = new PriorityQueue<>();
+		q.addAll(List.of("Apple", "Ball", "Dog", "Cat", "Zebra", "Monkey"));
+		System.out.println(q.poll());
+
+	}
+
+}

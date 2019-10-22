@@ -1,0 +1,97 @@
+package Beginers2;
+
+import java.util.Scanner;
+
+public class MonthDayRunner {
+
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Enter Weekday between 0 to 6 to find isWeekday:");
+		int number1 = scanner.nextInt();
+		System.out.println(isWeekDay(number1));
+
+		System.out.print("Enter Month number between 1 to 12 to retrun Month name:");
+		int number2 = scanner.nextInt();
+		System.out.println(monthName(number1));
+
+		System.out.print("Enter day number between 0 to 6 to return week name:");
+		int number3 = scanner.nextInt();
+		System.out.println(weekName(number1));
+
+	}
+
+	public static boolean isWeekDay(int dayNumber) {
+		switch (dayNumber) {
+		case 0:
+			return false;
+		case 1:
+			return true;
+		case 2:
+			return true;
+		case 3:
+			return true;
+		case 4:
+			return true;
+		case 5:
+			return true;
+		case 6:
+			return false;
+		// default:System.out.println("invalid entry");
+		}
+		return false;
+	}
+
+	public static String monthName(int monthNumber) {
+		String monthNameResult = "";
+		switch (monthNumber) {
+		case 1:
+			monthNameResult = "January";
+		case 2:
+			monthNameResult = "Feburary";
+		case 3:
+			monthNameResult = "March";
+		case 4:
+			monthNameResult = "April";
+		case 5:
+			monthNameResult = "May";
+		case 6:
+			monthNameResult = "June";
+		case 7:
+			monthNameResult = "July";
+		case 8:
+			monthNameResult = "August";
+		case 9:
+			monthNameResult = "September";
+		case 10:
+			monthNameResult = "October";
+		case 11:
+			monthNameResult = "November";
+		case 12:
+			monthNameResult = "December";
+		}
+		return monthNameResult = "Invalid entry";
+	}
+
+	public static String weekName(int weekNumber) {
+		String weekNameResult = "";
+		switch (weekNumber) {
+		case 0:
+			weekNameResult = "Sunday";
+		case 1:
+			weekNameResult = "Monday";
+		case 2:
+			weekNameResult = "Tuesday";
+		case 3:
+			weekNameResult = "Wednesday";
+		case 4:
+			weekNameResult = "Thursday";
+		case 5:
+			weekNameResult = "Friday";
+		case 6:
+			weekNameResult = "Saturday";
+		}
+		return weekNameResult = "Invalid entry";
+	}
+
+}

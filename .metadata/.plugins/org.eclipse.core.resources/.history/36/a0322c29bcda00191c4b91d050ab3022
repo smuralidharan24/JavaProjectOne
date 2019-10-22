@@ -1,0 +1,19 @@
+package Beginers.oops_Interface;
+
+abstract class Bark { // Abstract class
+
+	public void execute() {
+		bark();
+	}
+}
+
+	protected abstract void bark(); // Abstract Method without any implementation
+
+public class AnnimalRunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

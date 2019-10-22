@@ -1,0 +1,22 @@
+package Tips;
+
+class Person {
+
+}
+
+public class NestedClassRunner { // Example of nested class
+
+	class InnerClass { // if without static then its called as InnerClass
+
+	}
+
+	static class StaticNestedClass { // if the class has a static then its called StaticNestedClass
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

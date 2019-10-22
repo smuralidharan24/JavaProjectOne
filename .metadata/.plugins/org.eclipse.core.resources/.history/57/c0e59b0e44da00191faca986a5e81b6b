@@ -1,0 +1,11 @@
+package Beginers.oops_Interface2;
+
+public class Project {
+
+	public static void main(String[] args) {
+		ComplexAlgoritham algoritham = new DummyAlgoritham();
+		System.out.println(algoritham.ComplexAlgoritham(10, 12));
+
+	}
+
+}

@@ -1,0 +1,51 @@
+package com.crm.qa.pages;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.crm.qa.base.TestBase;
+
+public class ContactsPage extends TestBase {
+
+	// Page Factory/ObjectRepository (OR)
+	@FindBy(xpath = "//div[@class='ui header item mb5 light-black']")
+	WebElement contactLabel;
+
+	@FindBy(xpath = ".//div[@class='ui fluid container main-content']/table/thead")
+	WebElement contactsList;
+
+	// Initialise all the above WebElements
+	public ContactsPage() {
+		PageFactory.initElements(driver, this);
+	}
+
+	// Actions
+	public boolean verifyContactPageLabel() {
+		System.out.println(contactLabel.getText());
+		return contactLabel.isDisplayed();
+	}
+
+	public void allContactsList() {
+		// No. of Columns
+		List col = driver.findElements(By.xpath(".//div[@class='ui fluid container main-content']/table/thead/tr/th"));
+		System.out.println("Total No of columns are : " + col.size());
+		// No.of rows
+		List rows = driver
+				.findElements(By.xpath(".//div[@class='ui fluid container main-content']/table/tbody/tr/td[1]"));
+		System.out.println("Total No of rows are : " + rows.size());
+
+		System.out.println(contactsList.getText());
+		for (int i = 1; i <= rows.size(); i++) {
+			String dynamicTableValue = driver
+					.findElement(
+							By.xpath("//.//div[@class='ui fluid container main-content']/table/tbody/tr[" + i + "]"))
+					.getText();
+		System.out.println(dynamicTableValue);
+		}
+	}
+
+}

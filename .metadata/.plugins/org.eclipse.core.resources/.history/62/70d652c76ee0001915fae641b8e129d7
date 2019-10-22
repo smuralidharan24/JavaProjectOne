@@ -1,0 +1,26 @@
+package Beginers.oops_Collections;
+
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+
+public class CharSortRunner {
+
+	public static void main(String[] args) {
+		List<Character> characters = List.of('A', 'Z', 'A', 'B', 'Z', 'F', 'Z', 'X');
+
+		System.out.println("Original input" + characters);
+
+		Set<Character> sortedOrder = new LinkedHashSet<>(characters);
+		System.out.println("Input Order" + sortedOrder);
+
+		Set<Character> enteredOrder = new TreeSet<>(characters);
+		System.out.println("Sorted Order" + enteredOrder);
+
+		Set<Character> hasSetOrder = new HashSet<>(characters);
+		System.out.println("HashSet order" + hasSetOrder);
+	}
+
+}

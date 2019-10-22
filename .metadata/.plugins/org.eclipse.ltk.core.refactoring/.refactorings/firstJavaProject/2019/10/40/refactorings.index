@@ -1,0 +1,7 @@
+1570038436141	Delete element
+1570042714458	Extract method 'printBasic'
+1570185131449	Extract local variable 'evenPredicate'
+1570185174285	Extract method 'createEvenPredicate'
+1570204497513	Extract method 'method1'
+1570204575834	Extract method 'method2'
+1570204749294	Copy compilation unit

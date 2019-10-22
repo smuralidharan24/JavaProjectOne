@@ -1,0 +1,20 @@
+package Beginers.oops;
+
+public class MotorBikeRunner {
+
+	public static void main(String[] args) {
+		MotorBike ducati = new MotorBike();
+		MotorBike honda = new MotorBike();
+
+		ducati.startBike("Ducati");
+		System.out.println(ducati.getSpeed());
+
+		honda.startBike("Honda");
+		System.out.println(honda.getSpeed());
+
+		ducati.setSpeed(100);
+		honda.setSpeed(80);
+
+	}
+
+}

@@ -1,0 +1,52 @@
+package Learn1;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class OpenChrome {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "F:/Murali/Selenium/chromedriver_win32/chromedriver.exe");
+		/*
+		 * ChromeOptions options = new ChromeOptions();
+		 * options.addArguments("windows.size=1400,800");
+		 * options.addArguments("headless"); WebDriver driver = new
+		 * ChromeDriver(options);
+		 */
+		WebDriver driver = new ChromeDriver();
+
+		driver.get("http://www.google.co.uk");
+		String title = driver.getTitle();
+		System.out.println("Title of the browser is :" + title);
+		if (title.equals("Google")) {
+			System.out.println("Title is correct");
+		} else {
+			System.out.println("Title is inorrect");
+		}
+		System.out.println(driver.getCurrentUrl());
+		// System.out.println(driver.getPageSource());
+		Thread.sleep(5000); // Let the user actually see something!
+
+		/*
+		driver.findElement(By.name("q")).sendKeys("testing");
+		List<WebElement> list = driver
+				.findElements(By.xpath("//ul[@role='listbox']//li/descendant::div[@class='sbl1']"));
+
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i).getText());
+*/
+			boolean isLogoDisplayed = driver.findElement(By.id("hplogo")).isDisplayed();
+			System.out.println("Logo is Displayed" + isLogoDisplayed);
+
+			boolean isgmailLinkDisplayed = driver.findElement(By.linkText("Gmail")).isDisplayed();
+			System.out.println("Gmail link is Displayed" + isgmailLinkDisplayed);
+
+			Thread.sleep(5000); // Let the user actually see something!
+			driver.quit();
+		}
+	}
+}

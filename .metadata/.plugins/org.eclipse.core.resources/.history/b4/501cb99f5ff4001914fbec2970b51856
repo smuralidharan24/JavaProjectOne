@@ -1,0 +1,159 @@
+package com.crm.qa.pages;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.crm.qa.base.TestBase;
+
+public class ContactsPage extends TestBase {
+
+	// Page Factory/ObjectRepository (OR)
+	@FindBy(xpath = "//div[@class='ui header item mb5 light-black']")
+	WebElement contactLabel;
+
+	@FindBy(xpath = ".//div[@class='ui fluid container main-content']/table/thead")
+	WebElement contactsList;
+
+	@FindBy(xpath = "//button[contains(text(),'New')]")
+	WebElement newContact;
+
+	@FindBy(xpath = "//input[@name='first_name']")
+	WebElement firstName;
+
+	@FindBy(xpath = "//input[@name='last_name']")
+	WebElement lastName;
+
+	@FindBy(xpath = "//button[@class='ui linkedin button']")
+	WebElement saveContactBtn;
+
+	// Initialise all the above WebElements
+	public ContactsPage() {
+		PageFactory.initElements(driver, this);
+	}
+
+	// Actions
+
+	public boolean verifyContactPageLabel() {
+		System.out.println(contactLabel.getText());
+		return contactLabel.isDisplayed();
+	}
+
+	public void allContactsList() {
+		// No. of Columns
+		List col = driver.findElements(By.xpath(".//div[@class='ui fluid container main-content']/table/thead/tr/th"));
+		System.out.println("Total No of columns are : " + col.size());
+		// No.of rows
+		List rows = driver
+				.findElements(By.xpath(".//div[@class='ui fluid container main-content']/table/tbody/tr/td[1]"));
+		System.out.println("Total No of rows are : " + rows.size());
+
+		System.out.println(contactsList.getText());
+		for (int i = 1; i <= rows.size(); i++) {
+			String dynamicTableValue = driver
+					.findElement(
+							By.xpath("//.//div[@class='ui fluid container main-content']/table/tbody/tr[" + i + "]"))
+					.getText();
+			System.out.println(dynamicTableValue);
+		}
+	}
+
+	public void clickOnNewContact() {
+		newContact.click();
+	}
+
+	public void enterContactName(String ftname, String ltname) throws Exception {
+		/*
+		 * int nameLength = 12; // Enter Firstname String randomFirstName =
+		 * randomString(nameLength); firstName.sendKeys(randomFirstName); // Enter
+		 * lastname String randomLastName = randomString(nameLength);
+		 * lastName.sendKeys(randomLastName);
+		 */
+		firstName.sendKeys(ftname);
+		lastName.sendKeys(ltname);
+	}
+
+	public void selectCompanyName(String compName) {
+		// Select Company
+		action = new Actions(driver);
+		/*
+		 * driver.findElement(By.xpath("//div[@name='company']//input[@class='search']")
+		 * ).sendKeys("UK Company"); action.moveToElement(driver.findElement(By.
+		 * xpath("//span[contains(text(),'UK Company')]"))).build().perform();
+		 * driver.findElement(By.xpath("//span[contains(text(),'UK Company')]")).click()
+		 * ; driver.findElement(By.
+		 * xpath("//button[@class='ui small fluid positive toggle button']")).click();
+		 */
+
+		driver.findElement(By.xpath("//div[@name='company']//input[@class='search']")).sendKeys(compName);
+		action.moveToElement(driver.findElement(By.xpath("//div[@class='selected item addition']"))).build().perform();
+		driver.findElement(By.xpath("//div[@class='selected item addition']")).click();
+
+	}
+
+	public void enterEmailAddress(String email) throws Exception {
+		/*
+		 * int nameLength = 12; String randomName = randomString(nameLength);
+		 * driver.findElement(By.
+		 * xpath("//div[@class='ui right corner labeled input']//input[@name='value']"))
+		 * .sendKeys(randomName + "@Testmail.com"); driver.findElement(By.
+		 * xpath("//div[@class='three fields']//input[@name='name']")).
+		 * sendKeys("@Business Email"); driver.findElement( By.
+		 * xpath("//div[@class='field']//div[@class='field']//div[@class='field']//div//i[@class='add icon']"
+		 * )) .click();
+		 */
+
+		driver.findElement(By.xpath("//div[@class='ui right corner labeled input']//input[@name='value']"))
+				.sendKeys(email);
+		driver.findElement(By.xpath("//div[@class='three fields']//input[@name='name']")).sendKeys("@Business Email");
+		driver.findElement(
+				By.xpath("//div[@class='field']//div[@class='field']//div[@class='field']//div//i[@class='add icon']"))
+				.click();
+	}
+
+	public void enterAddress(String street, String city, String county, String zipC, String country) throws Exception {
+		/*
+		 * int nameLength = 12; String randomName = randomString(nameLength);
+		 * driver.findElement(By.xpath("//input[@placeholder='Street Address']"))
+		 * .sendKeys(generateRandomInt() + " " + randomName + " Street");
+		 * driver.findElement(By.xpath("//input[@placeholder='City']")).sendKeys(
+		 * randomCity());
+		 * driver.findElement(By.xpath("//input[@placeholder='State / County']")).
+		 * sendKeys(randomCity());
+		 * driver.findElement(By.xpath("//input[@placeholder='Zip Code']")).sendKeys(
+		 * randomPostcode());
+		 * driver.findElement(By.xpath("//div[@name='country']")).click();
+		 * driver.findElement(By.xpath(
+		 * "//div[@role='listbox' and @class='visible menu transition']//div//span[contains(text(),'United Kingdom')]"
+		 * )) .click();
+		 */
+
+		driver.findElement(By.xpath("//input[@placeholder='Street Address']"))
+				.sendKeys(street);
+		driver.findElement(By.xpath("//input[@placeholder='City']")).sendKeys(city);
+		driver.findElement(By.xpath("//input[@placeholder='State / County']")).sendKeys(county);
+		driver.findElement(By.xpath("//input[@placeholder='Zip Code']")).sendKeys(zipC);
+		driver.findElement(By.xpath("//div[@name='country']")).click();
+		driver.findElement(By.xpath(
+				"//div[@role='listbox' and @class='visible menu transition']//div//span[contains(text(),'United Kingdom')]"))
+				.click();
+	}
+
+	public void enterPhoneNumber() {
+		driver.findElement(By.xpath("//div[contains(text(),'United States')]")).click();
+		driver.findElement(By.xpath(
+				"//div[@role='listbox' and @class='visible menu transition']//div//span[contains(text(),'United Kingdom')]"))
+				.click();
+		driver.findElement(By.xpath("//input[@placeholder='Number']")).sendKeys(generateRandomMobileNumber());
+		driver.findElement(By.xpath("//div[@class='four fields']//i[@class='add icon']")).click();
+	}
+
+	public void saveContact() {
+		saveContactBtn.click();
+		System.out.println("Contact created and saved sucessfully");
+	}
+}

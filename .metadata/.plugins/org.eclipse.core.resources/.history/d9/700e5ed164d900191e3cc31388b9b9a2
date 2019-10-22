@@ -1,0 +1,12 @@
+package Beginers.oops_Level2;
+
+public class FanRunner {
+
+	public static void main(String[] args) {
+		Fan fan = new Fan("Polar",3.5, "white");
+		
+		System.out.println(fan);
+
+	}
+
+}

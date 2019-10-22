@@ -1,0 +1,22 @@
+package Tips;
+
+public class BlockRunner {
+
+	public static final int SECONDS_IN_A_MINUTE = 60;
+	public static final int MINUTES_IN_A_HOUR = 60;
+	public static final int HOURS_IN_A_DAY = 24;
+	public static final int SECONDS_IN_A_DAY = SECONDS_IN_A_MINUTE * MINUTES_IN_A_HOUR * HOURS_IN_A_DAY;
+
+	public static final char[] digits = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e',
+			'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+
+	public static void main(String[] args) {
+		System.out.println(0x80000000);
+		System.out.println(SECONDS_IN_A_DAY);
+		if (3 > 2) {
+			System.out.println("Yes 3 is greater than 2");
+		}
+
+	}
+
+}

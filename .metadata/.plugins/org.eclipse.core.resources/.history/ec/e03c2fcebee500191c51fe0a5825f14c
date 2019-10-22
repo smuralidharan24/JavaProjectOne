@@ -1,0 +1,63 @@
+package Functional_Programming;
+
+import java.util.List;
+
+public class FunctionalProgrammingRunner {
+
+	public static void main(String[] args) {
+		List<String> list = List.of("Apple", "Bannana", "Bat", "Cat", "Dog");
+
+		List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+		// printBasic(list);
+		// printBasicWithFilter(list);
+		// printWithFunctionalProgrammingWithFilter(list);
+		// printWithFunctionalProgramming(list);
+		printOddNumber(numbers);
+		printEvenNumber(numbers);
+		printSumOfNumber(numbers);
+
+	}
+
+	private static void printBasic(List<String> list) {
+		for (String string : list) {
+			System.out.println(string);
+		}
+	}
+
+	private static void printBasicWithFilter(List<String> list) {
+		for (String string : list) {
+			if (string.endsWith("at")) {
+				System.out.println(string);
+			}
+		}
+	}
+
+	private static void printWithFunctionalProgramming(List<String> list) {
+		list.stream().forEach(element -> System.out.println(element)); // Lambda expression
+	}
+
+	private static void printWithFunctionalProgrammingWithFilter(List<String> list) {
+		list.stream().filter(element -> element.endsWith("at")).forEach(element -> System.out.println(element));
+	}
+
+	private static void printOddNumber(List<Integer> numbers) {
+		numbers.stream().filter(element -> element % 2 == 1).forEach(element -> System.out.println("Odd - " + element));
+	}
+
+	private static void printEvenNumber(List<Integer> numbers) {
+		numbers.stream().filter(element -> element % 2 == 0)
+				.forEach(element -> System.out.println("Even - " + element));
+	}
+
+	private static void printSumOfNumber(List<Integer> numbers) {
+		int sum = numbers.stream().reduce(0, (number1, number2) -> number1 + number2);
+		System.out.println("Sum - " + sum);
+	}
+
+	private static void printSumOfOddNumber(List<Integer> numbers) {
+		int sumOfOdd = numbers.stream().filter(element -> element % 2 == 1).reduce(0,
+				(number1, number2) -> number1 + number2);
+		System.out.println("Odd - " + sumOfOdd);
+	}
+}

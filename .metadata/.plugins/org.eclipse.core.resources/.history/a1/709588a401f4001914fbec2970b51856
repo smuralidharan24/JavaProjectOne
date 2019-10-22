@@ -1,0 +1,6 @@
+url = https://ui.freecrm.com
+username = smuralidharan24@gmail.com
+password = FreeCrm@1234
+browser = chrome
+SYSTEM_PROPERTY_CHROME_DRIVER = webdriver.chrome.driver
+SYSTEM_PROPERTY_CHROME_PATH = F:/Murali/Selenium/chromedriver_win32/chromedriver.exe

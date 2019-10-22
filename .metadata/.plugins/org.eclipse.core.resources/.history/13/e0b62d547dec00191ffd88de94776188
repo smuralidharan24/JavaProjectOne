@@ -1,0 +1,67 @@
+package Learn1;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class JavaSrciptExecutorConcept {
+
+	public static void main(String[] args) throws InterruptedException {
+		System.setProperty("webdriver.chrome.driver", "F:/Murali/Selenium/chromedriver_win32/chromedriver.exe");
+		WebDriver driver = new ChromeDriver(); // Launch Chrome driver
+
+		driver.manage().window().maximize(); // maximize windows
+		driver.manage().deleteAllCookies(); // delete all cookies
+
+		driver.get("https://ui.freecrm.com");
+		String title = driver.getTitle();
+		System.out.println("Title of the browser is :" + title);
+
+		// dynamic wait time
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
+		driver.findElement(By.name("email")).sendKeys("smuralidharan24@gmail.com");
+		driver.findElement(By.name("password")).sendKeys("FreeCrm@1234");
+
+		WebElement loginBtn = driver.findElement(By.xpath("//*[@id=\"ui\"]/div/div/form/div/div[3]"));
+		// driver.findElement(By.xpath("//*[@id=\"ui\"]/div/div/form/div/div[3]")).click();
+		flash(loginBtn, driver);
+		Thread.sleep(3000); // Let the user actually see something!
+		System.out.println("Title of the browser after login is :" + driver.getTitle());
+		driver.quit();
+	}
+
+	public static void flash(WebElement element, WebDriver driver) throws InterruptedException {
+		System.out.println("Inside flash method");
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		String bgColor = element.getCssValue("backgroundColor");
+		System.out.println(bgColor);
+		for (int i = 0; i < 10; i++) {
+			changeColor("rbg(0,200,0)", element, driver);
+			System.out.println("Inside for loop method");
+			Thread.sleep(3000);
+			changeColor(bgColor, element, driver);
+		}
+	}
+
+	private static void changeColor(String color, WebElement element, WebDriver driver) throws InterruptedException {
+		System.out.println("Inside changeColor method");
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		js.executeScript("arguments[0].style.backgroundColor = '" + color + "'", element);
+		js.executeScript("arguments[0].setAttribute('style', 'background: red; border: 2px solid red;');", element);
+		Thread.sleep(2000);
+		js.executeScript("arguments[0].style.border = '3px solid red'", element);
+		Thread.sleep(2000);
+		js.executeScript("arguments[0].setAttribute('style', arguments[1]);", element,
+				"color: yellow; border: 2px solid yellow;");
+		Thread.sleep(2000);
+		js.executeScript("arguments[0].setAttribute('style', arguments[1]);", element, "");
+		Thread.sleep(2000);
+	}
+
+}

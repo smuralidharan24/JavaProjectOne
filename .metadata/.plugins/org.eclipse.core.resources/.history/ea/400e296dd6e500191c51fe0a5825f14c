@@ -1,0 +1,13 @@
+package Functional_Programming;
+
+import java.util.List;
+
+public class LambdaRunner {
+
+	public static void main(String[] args) {
+		List.of(23, 43, 34, 45, 36, 48).stream().filter(e -> e % 2 == 0)
+				.forEach(element -> System.out.println(element));
+
+	}
+
+}

@@ -1,0 +1,23 @@
+package Tips;
+
+enum Season {
+	WINTER, SPRING, SUMMER, FALL;// Ordinal -0,1,2,3
+}
+
+public class EnumRunner {
+
+	public static void main(String[] args) {
+		Season fall = Season.FALL;
+		System.out.println(fall);
+
+		Season winter = Season.valueOf("WINTER");
+		System.out.println(winter);
+		System.out.println(winter.name());
+
+		Season summer = Season.valueOf("SUMMER");
+		System.out.println(summer.ordinal());
+
+		System.out.println(Season.FALL.ordinal());
+	}
+
+}

@@ -1,0 +1,46 @@
+package Learn1;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class DateAndTimeRunner {
+
+	public static void main(String[] args) {
+
+		// LocalDate
+		LocalDate date = LocalDate.now(); // gets the current date
+		DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+		System.out.println("Using function LocaDate " + date.format(formatter1));
+		System.out.println(date);
+
+		// LocalTime
+		LocalTime time = LocalTime.now(); // gets the current time
+		DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("HH:mm:ss.n");
+		DateTimeFormatter formatter21 = DateTimeFormatter.ofPattern("HH:mm:ss.v");
+		System.out.println("Using function LocaTime " + time.format(formatter2));
+		System.out.println("time-zone ID " + time.format(formatter21));
+		System.out.println(time);
+
+		// LocalDateTime
+		LocalDateTime dateTime = LocalDateTime.now(); // gets the current date and time
+		DateTimeFormatter formatter3 = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+		DateTimeFormatter formatter31 = DateTimeFormatter.ISO_DATE_TIME;
+		System.out.println("Using function LocalDateTime " + dateTime.format(formatter3));
+		System.out.println("ISO_DATE_TIME " + dateTime.format(formatter31));
+		System.out.println(dateTime);
+
+		// ZonedDateTime
+		ZonedDateTime zonedDateTime = ZonedDateTime.now(); // gets the current date and time
+		DateTimeFormatter formatter4 = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+		DateTimeFormatter formatter42 = DateTimeFormatter.ISO_ZONED_DATE_TIME;
+		DateTimeFormatter formatter43 = DateTimeFormatter.RFC_1123_DATE_TIME;
+		System.out.println("Using function zonedDateTime " + zonedDateTime.format(formatter4));
+		System.out.println("ISO_ZONED_DATE_TIME " + zonedDateTime.format(formatter42));
+		System.out.println("RFC_1123_DATE_TIME " + zonedDateTime.format(formatter43));
+		System.out.println(zonedDateTime);
+	}
+
+}

@@ -1,0 +1,42 @@
+package Beginers2;
+
+import java.util.Scanner;
+
+public class MenuRunner {
+
+	public static void main(String[] args) {
+
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Enter Number 1:");
+		int number1 = scanner.nextInt();
+		System.out.print("Enter Number 2:");
+		int number2 = scanner.nextInt();
+
+		System.out.println("The 1st number you entered is - " + number1);
+		System.out.println("The 2nd number you entered is - " + number2);
+
+		System.out.print("1 - Add");
+		System.out.print("2 - Subtract");
+		System.out.print("3 - Divide");
+		System.out.print("4 - Multiply");
+		System.out.print("Choose Operation : ");
+		int operationChoosen = scanner.nextInt();
+
+		if (operationChoosen == 1) {
+			int addResult = number1 + number2;
+			System.out.printf("The addition of %d + %d = %d", number1, number2, addResult);
+		} else if (operationChoosen == 2) {
+			int substractionResult = number1 - number2;
+			System.out.printf("The addition of %d - %d = %d", number1, number2, substractionResult);
+		} else if (operationChoosen == 3) {
+			int divsionResult = number1 / number2;
+			System.out.printf("The addition of %d / %d = %d", number1, number2, divsionResult);
+		} else if (operationChoosen == 4) {
+			int multiplyResult = number1 * number2;
+			System.out.printf("The addition of %d * %d = %d", number1, number2, multiplyResult);
+		} else {
+			System.out.println("invalid operation");
+		}
+	}
+
+}

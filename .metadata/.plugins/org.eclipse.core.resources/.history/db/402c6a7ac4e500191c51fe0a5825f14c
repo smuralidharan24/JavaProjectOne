@@ -1,0 +1,104 @@
+package Functional_Programming;
+
+import java.util.List;
+
+public class FunctionalProgrammingRunner {
+
+	public static void main(String[] args) {
+		List<String> list = List.of("Apple", "Bannana", "Bat", "Cat", "Dog");
+
+		List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 50, 40, 30, 20, 18, 15, 10, 15, 20, 30, 40);
+
+		// printBasic(list);
+		// printBasicWithFilter(list);
+		// printWithFunctionalProgrammingWithFilter(list);
+		// printWithFunctionalProgramming(list);
+		printOddNumber(numbers);
+		printEvenNumber(numbers);
+		printSumOfNumber(numbers);
+		printSumOfOddNumber(numbers);
+		printSumOfEvenNumber(numbers);
+		// printSumOfNumber1(numbers);
+		printSortNumber(numbers);
+		printDistinctNumber(numbers);
+		printMapNumber(numbers);
+		printSquareOfFirst10Number(numbers);
+
+	}
+
+	private static void printBasic(List<String> list) {
+		for (String string : list) {
+			System.out.println(string);
+		}
+	}
+
+	private static void printBasicWithFilter(List<String> list) {
+		for (String string : list) {
+			if (string.endsWith("at")) {
+				System.out.println(string);
+			}
+		}
+	}
+
+	private static void printWithFunctionalProgramming(List<String> list) {
+		list.stream().forEach(element -> System.out.println(element)); // Lambda expression
+	}
+
+	private static void printWithFunctionalProgrammingWithFilter(List<String> list) {
+		list.stream().filter(element -> element.endsWith("at")).forEach(element -> System.out.println(element));
+	}
+
+	private static void printOddNumber(List<Integer> numbers) {
+		numbers.stream().filter(element -> element % 2 == 1).forEach(element -> System.out.println("Odd - " + element));
+	}
+
+	private static void printEvenNumber(List<Integer> numbers) {
+		numbers.stream().filter(element -> element % 2 == 0)
+				.forEach(element -> System.out.println("Even - " + element));
+	}
+
+	private static void printSumOfNumber(List<Integer> numbers) {
+		int sum = numbers.stream().reduce(0, (number1, number2) -> number1 + number2);
+		System.out.println("Sum - " + sum);
+	}
+
+	private static void printSumOfNumber1(List<Integer> numbers) {
+		int sum = numbers.stream().reduce(0, (number1, number2) -> { // You can write multiple operations within
+																		// parenthesis
+			System.out.println(number1 + " " + number2);
+			return number1 + number2;
+		});
+		System.out.println("Sum - " + sum);
+	}
+
+	private static void printSumOfOddNumber(List<Integer> numbers) {
+		int sumOfOdd = numbers.stream().filter(element -> element % 2 == 1).reduce(0,
+				(number1, number2) -> number1 + number2);
+		System.out.println("Sum of Odd - " + sumOfOdd);
+	}
+
+	private static void printSumOfEvenNumber(List<Integer> numbers) {
+		int sumOfEven = numbers.stream().filter(element -> element % 2 == 0).reduce(0,
+				(number1, number2) -> number1 + number2);
+		System.out.println("Sum of Even - " + sumOfEven);
+	}
+
+	private static void printSortNumber(List<Integer> numbers) {
+		numbers.stream().sorted().forEach(element -> System.out.println("Sorted value - " + element));
+	}
+
+	private static void printDistinctNumber(List<Integer> numbers) {
+		numbers.stream().distinct().sorted().forEach(element -> System.out.println("Distinct value - " + element));
+	}
+
+	private static void printMapNumber(List<Integer> numbers) {
+		numbers.stream().distinct().sorted().map(element -> element * element)
+				.forEach(element -> System.out.println("Square value - " + element));
+	}
+
+	private static void printSquareOfFirst10Number(List<Integer> numbers) {
+		numbers.stream().distinct().sorted()
+
+				.map(element -> element * element).forEach(element -> System.out.println("Square value - " + element));
+	}
+}

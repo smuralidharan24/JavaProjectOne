@@ -1,0 +1,10 @@
+package Functional_Programming;
+
+public class FunctionalProgrammingRunner {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

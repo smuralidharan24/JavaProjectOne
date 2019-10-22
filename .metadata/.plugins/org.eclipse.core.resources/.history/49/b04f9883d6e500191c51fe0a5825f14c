@@ -1,0 +1,13 @@
+package Functional_Programming;
+
+import java.util.List;
+
+public class MethodReferenceRunner {
+
+	public static void main(String[] args) {
+		List.of("Apple", "Bannana", "Bat", "Cat", "Dog").stream().map(s -> s.length())
+				.forEach(s -> System.out.println(s));
+
+	}
+
+}
