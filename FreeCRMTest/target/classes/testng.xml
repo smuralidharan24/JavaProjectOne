@@ -2,8 +2,12 @@
   
 <suite name="TestNG - Free CRM Application Test">
 
-	<listeners>
+<!-- 	<listeners>
 		<listener class-name="com.crm.qa.ExtendReportListener.ExtentReportNG" />
+	</listeners> -->
+	
+	<listeners>
+		<listener class-name="com.crm.qa.ExtendReportListener.ExtentReportNG2" />
 	</listeners>
 	
   <test name="Learning POM structure" >

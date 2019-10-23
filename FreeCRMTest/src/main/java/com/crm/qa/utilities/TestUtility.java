@@ -4,7 +4,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.time.LocalDateTime;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 //import org.apache.commons.io.FileUtils;
 import org.apache.poi.EncryptedDocumentException;
@@ -61,7 +62,7 @@ public class TestUtility extends TestBase {
 	}
 
 	public static void takeScreenshotAtEndOfTest() throws IOException {
-		LocalDateTime now = LocalDateTime.now();
+		String dateName = new SimpleDateFormat("yyyyMMddhhmmss.n").format(new Date());
 		// Convert driver object to TakeScreenshot
 		TakesScreenshot scrShot = ((TakesScreenshot) driver);
 		// Call getScreenshotAs method to create image file
@@ -74,8 +75,7 @@ public class TestUtility extends TestBase {
 		// System.currentTimeMillis() + "_scrn.png"));
 		// Copy file at destination using new version of import
 		// org.apache.tools.ant.util.FileUtils;
-		FileUtils.getFileUtils().copyFile(scrFile,
-				new File(currentDir + "/screenshots/" + now + System.currentTimeMillis() + "_scrn.png"));
+		FileUtils.getFileUtils().copyFile(scrFile, new File(currentDir + "/screenshots/" + dateName + "_scrn.png"));
 	}
 
 }

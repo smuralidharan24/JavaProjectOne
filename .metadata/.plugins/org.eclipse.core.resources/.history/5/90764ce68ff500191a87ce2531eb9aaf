@@ -1,0 +1,33 @@
+package TestNGWithExtentReports.TestNGWithExtentReports;
+
+import java.util.concurrent.TimeUnit;
+
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class TestRunnerForLog {
+    static Logger log = Logger.getLogger(TestRunnerForLog.class);
+    
+    public static void main(String[] args)
+    {
+        //PropertiesConfigurator is used to configure logger from properties file
+        PropertyConfigurator.configure("log4j.properties");
+ 
+        //Log in console in and log file
+        log.debug("Log4j appender configuration is successful !!");
+        
+		WebDriver driver = new ChromeDriver(); // Launch Chrome driver
+
+		driver.manage().window().maximize(); // maximize windows
+		driver.manage().deleteAllCookies(); // delete all cookies
+		// dynamic wait time
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.get("http://google.co.uk");
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		log.info("entering application URL");
+		log.warn("Hey this just a warning message");
+    }
+}

@@ -18,7 +18,7 @@ public class LoginPage extends TestBase {
 	@FindBy(xpath = "//div[@class='ui fluid large blue submit button']")
 	WebElement loginBtn;
 
-	@FindBy(linkText = "fail") // Sing Up
+	@FindBy(linkText = "Sing Up") //
 	WebElement SignUpBtn;
 
 	@FindBy(linkText = "fail") // Forgot your password?

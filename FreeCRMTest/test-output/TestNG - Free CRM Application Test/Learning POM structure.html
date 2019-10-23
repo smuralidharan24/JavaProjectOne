@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Learning POM structure</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>14/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>13/1/1</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Oct 22 15:00:03 BST 2019</td>
+<td>Started on:</td><td>Wed Oct 23 11:20:07 BST 2019</td>
 </tr>
-<tr><td>Total time:</td><td>245 seconds (245696 ms)</td>
+<tr><td>Total time:</td><td>233 seconds (233340 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,26 +76,16 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.crm.qa.testsuite.LoginPageTest.forgottenPasswordLinkTest()'><b>forgottenPasswordLinkTest</b><br>Test class: com.crm.qa.testsuite.LoginPageTest</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;link text&quot;,&quot;selector&quot;:&quot;fail&quot;}
-  (Session info: chrome=77.0.3865.120)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;SHANTHA-HP-LAPT&apos;, ip: &apos;192.168.1.77&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;12.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.120, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\Murali\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49343}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: cf4a8a4b67e0d8149faf2b6bceeaf5f8
-*** Element info: {Using=link text, value=fail}
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:380)
-	at org.openqa.selenium.By$ByLinkText.findElement(By.java:220)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:105)
+<td><div><pre>java.lang.IllegalArgumentException: Illegal pattern character &apos;n&apos;
+	at java.base/java.text.SimpleDateFormat.compile(SimpleDateFormat.java:845)
+	at java.base/java.text.SimpleDateFormat.initialize(SimpleDateFormat.java:653)
+	at java.base/java.text.SimpleDateFormat.&lt;init&gt;(SimpleDateFormat.java:624)
+	at java.base/java.text.SimpleDateFormat.&lt;init&gt;(SimpleDateFormat.java:599)
+	at com.crm.qa.utilities.TestUtility.takeScreenshotAtEndOfTest(TestUtility.java:65)
+	at com.crm.qa.utilities.WebEventListener.onException(WebEventListener.java:66)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$0(EventFiringWebDriver.java:84)
+	at com.sun.proxy.$Proxy12.onException(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:107)
 	at com.sun.proxy.$Proxy13.findElement(Unknown Source)
 	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:194)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
@@ -104,35 +94,21 @@ Session ID: cf4a8a4b67e0d8149faf2b6bceeaf5f8
 	at com.crm.qa.pages.LoginPage.validateForgotYourPasswordLink(LoginPage.java:38)
 	at com.crm.qa.testsuite.LoginPageTest.forgottenPasswordLinkTest(LoginPageTest.java:47)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
-... Removed 35 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1678516587", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1678516587'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;link text&quot;,&quot;selector&quot;:&quot;fail&quot;}
-  (Session info: chrome=77.0.3865.120)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;SHANTHA-HP-LAPT&apos;, ip: &apos;192.168.1.77&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;12.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 77.0.3865.120, chrome: {chromedriverVersion: 77.0.3865.40 (f484704e052e0..., userDataDir: C:\Users\Murali\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:49343}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: cf4a8a4b67e0d8149faf2b6bceeaf5f8
-*** Element info: {Using=link text, value=fail}
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByLinkText(RemoteWebDriver.java:380)
-	at org.openqa.selenium.By$ByLinkText.findElement(By.java:220)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1558397083", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1558397083'><pre>java.lang.IllegalArgumentException: Illegal pattern character &apos;n&apos;
+	at java.base/java.text.SimpleDateFormat.compile(SimpleDateFormat.java:845)
+	at java.base/java.text.SimpleDateFormat.initialize(SimpleDateFormat.java:653)
+	at java.base/java.text.SimpleDateFormat.&lt;init&gt;(SimpleDateFormat.java:624)
+	at java.base/java.text.SimpleDateFormat.&lt;init&gt;(SimpleDateFormat.java:599)
+	at com.crm.qa.utilities.TestUtility.takeScreenshotAtEndOfTest(TestUtility.java:65)
+	at com.crm.qa.utilities.WebEventListener.onException(WebEventListener.java:66)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:105)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$0(EventFiringWebDriver.java:84)
+	at com.sun.proxy.$Proxy12.onException(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.lambda$new$1(EventFiringWebDriver.java:107)
 	at com.sun.proxy.$Proxy13.findElement(Unknown Source)
 	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:194)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
@@ -170,7 +146,7 @@ Session ID: cf4a8a4b67e0d8149faf2b6bceeaf5f8
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
 <td>40</td>
-<td>com.crm.qa.testsuite.LoginPageTest@20d28811</td></tr>
+<td>com.crm.qa.testsuite.LoginPageTest@60d8c9b7</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -183,72 +159,103 @@ Session ID: cf4a8a4b67e0d8149faf2b6bceeaf5f8
 <td title='com.crm.qa.testsuite.ContactsPageTest.createNewContactTest()'><b>createNewContactTest</b><br>Test class: com.crm.qa.testsuite.ContactsPageTest<br>Parameters: Murali, dharan, Infosys, test1@testmail.com</td>
 <td></td>
 <td>8</td>
-<td>com.crm.qa.testsuite.ContactsPageTest@59d016c9</td></tr>
+<td>com.crm.qa.testsuite.ContactsPageTest@20d28811</td></tr>
 <tr>
 <td title='com.crm.qa.testsuite.ContactsPageTest.createNewContactTest()'><b>createNewContactTest</b><br>Test class: com.crm.qa.testsuite.ContactsPageTest<br>Parameters: three, three, TCS, test2@testmail.com</td>
 <td></td>
-<td>8</td>
-<td>com.crm.qa.testsuite.ContactsPageTest@59d016c9</td></tr>
+<td>6</td>
+<td>com.crm.qa.testsuite.ContactsPageTest@20d28811</td></tr>
 <tr>
 <td title='com.crm.qa.testsuite.ContactsPageTest.createNewContactTest()'><b>createNewContactTest</b><br>Test class: com.crm.qa.testsuite.ContactsPageTest<br>Parameters: four, four, CTS, test3@testmail.com</td>
 <td></td>
 <td>7</td>
-<td>com.crm.qa.testsuite.ContactsPageTest@59d016c9</td></tr>
+<td>com.crm.qa.testsuite.ContactsPageTest@20d28811</td></tr>
 <tr>
 <td title='com.crm.qa.testsuite.ContactsPageTest.createNewContactTest()'><b>createNewContactTest</b><br>Test class: com.crm.qa.testsuite.ContactsPageTest<br>Parameters: five, five, Patni, test4@testmail.com</td>
 <td></td>
-<td>7</td>
-<td>com.crm.qa.testsuite.ContactsPageTest@59d016c9</td></tr>
+<td>6</td>
+<td>com.crm.qa.testsuite.ContactsPageTest@20d28811</td></tr>
 <tr>
 <td title='com.crm.qa.testsuite.ContactsPageTest.createNewContactTest()'><b>createNewContactTest</b><br>Test class: com.crm.qa.testsuite.ContactsPageTest<br>Parameters: six, six, Capgemini, test5@testmail.com</td>
 <td></td>
 <td>7</td>
-<td>com.crm.qa.testsuite.ContactsPageTest@59d016c9</td></tr>
+<td>com.crm.qa.testsuite.ContactsPageTest@20d28811</td></tr>
 <tr>
 <td title='com.crm.qa.testsuite.ContactsPageTest.createNewContactTest()'><b>createNewContactTest</b><br>Test class: com.crm.qa.testsuite.ContactsPageTest<br>Parameters: seven, seven, ADP, test6@testmail.com</td>
 <td></td>
 <td>8</td>
-<td>com.crm.qa.testsuite.ContactsPageTest@59d016c9</td></tr>
+<td>com.crm.qa.testsuite.ContactsPageTest@20d28811</td></tr>
 <tr>
 <td title='com.crm.qa.testsuite.ContactsPageTest.createNewContactTest()'><b>createNewContactTest</b><br>Test class: com.crm.qa.testsuite.ContactsPageTest<br>Parameters: eight, eight, Atos, test7@testmail.com</td>
 <td></td>
-<td>8</td>
-<td>com.crm.qa.testsuite.ContactsPageTest@59d016c9</td></tr>
-<tr>
-<td title='com.crm.qa.testsuite.LoginPageTest.loginPageTitleTest()'><b>loginPageTitleTest</b><br>Test class: com.crm.qa.testsuite.LoginPageTest</td>
-<td></td>
-<td>0</td>
-<td>com.crm.qa.testsuite.LoginPageTest@20d28811</td></tr>
+<td>7</td>
+<td>com.crm.qa.testsuite.ContactsPageTest@20d28811</td></tr>
 <tr>
 <td title='com.crm.qa.testsuite.LoginPageTest.submitLoginTest()'><b>submitLoginTest</b><br>Test class: com.crm.qa.testsuite.LoginPageTest</td>
 <td></td>
 <td>0</td>
-<td>com.crm.qa.testsuite.LoginPageTest@20d28811</td></tr>
+<td>com.crm.qa.testsuite.LoginPageTest@60d8c9b7</td></tr>
 <tr>
 <td title='com.crm.qa.testsuite.HomePageTest.verifyClickOnContactsLinkTest()'><b>verifyClickOnContactsLinkTest</b><br>Test class: com.crm.qa.testsuite.HomePageTest</td>
 <td></td>
 <td>1</td>
-<td>com.crm.qa.testsuite.HomePageTest@3cc2931c</td></tr>
+<td>com.crm.qa.testsuite.HomePageTest@3967e60c</td></tr>
 <tr>
 <td title='com.crm.qa.testsuite.HomePageTest.verifyClickOnDealsLinkTest()'><b>verifyClickOnDealsLinkTest</b><br>Test class: com.crm.qa.testsuite.HomePageTest</td>
 <td></td>
-<td>2</td>
-<td>com.crm.qa.testsuite.HomePageTest@3cc2931c</td></tr>
+<td>1</td>
+<td>com.crm.qa.testsuite.HomePageTest@3967e60c</td></tr>
 <tr>
 <td title='com.crm.qa.testsuite.HomePageTest.verifyClickOnTasksLinkTest()'><b>verifyClickOnTasksLinkTest</b><br>Test class: com.crm.qa.testsuite.HomePageTest</td>
 <td></td>
 <td>1</td>
-<td>com.crm.qa.testsuite.HomePageTest@3cc2931c</td></tr>
+<td>com.crm.qa.testsuite.HomePageTest@3967e60c</td></tr>
 <tr>
 <td title='com.crm.qa.testsuite.HomePageTest.verifyHomePageTitleTest()'><b>verifyHomePageTitleTest</b><br>Test class: com.crm.qa.testsuite.HomePageTest</td>
 <td></td>
 <td>0</td>
-<td>com.crm.qa.testsuite.HomePageTest@3cc2931c</td></tr>
+<td>com.crm.qa.testsuite.HomePageTest@3967e60c</td></tr>
 <tr>
 <td title='com.crm.qa.testsuite.HomePageTest.verifyUserDisplayNameTest()'><b>verifyUserDisplayNameTest</b><br>Test class: com.crm.qa.testsuite.HomePageTest</td>
 <td></td>
+<td>1</td>
+<td>com.crm.qa.testsuite.HomePageTest@3967e60c</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.crm.qa.testsuite.LoginPageTest.loginPageTitleTest()'><b>loginPageTitleTest</b><br>Test class: com.crm.qa.testsuite.LoginPageTest</td>
+<td><div><pre>java.lang.Throwable: Method LoginPageTest.loginPageTitleTest()[pri:0, instance:com.crm.qa.testsuite.LoginPageTest@60d8c9b7] depends on not successfully finished methods
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace801783477", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace801783477'><pre>java.lang.Throwable: Method LoginPageTest.loginPageTitleTest()[pri:0, instance:com.crm.qa.testsuite.LoginPageTest@60d8c9b7] depends on not successfully finished methods
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:99)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+	at org.testng.TestRunner.privateRun(TestRunner.java:770)
+	at org.testng.TestRunner.run(TestRunner.java:591)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:402)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:396)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:355)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:304)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1180)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1102)
+	at org.testng.TestNG.runSuites(TestNG.java:1032)
+	at org.testng.TestNG.run(TestNG.java:1000)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
 <td>0</td>
-<td>com.crm.qa.testsuite.HomePageTest@3cc2931c</td></tr>
+<td>com.crm.qa.testsuite.LoginPageTest@60d8c9b7</td></tr>
 </table><p>
 </body>
 </html>

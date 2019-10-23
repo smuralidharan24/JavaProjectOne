@@ -36,13 +36,13 @@ public class LoginPageTest extends TestBase {
 		loginPage = new LoginPage(); // LoginPage class method
 	}
 
-	@Test()
+	@Test(dependsOnMethods = "forgottenPasswordLinkTest")
 	public void loginPageTitleTest() {
 		String title = loginPage.validatePageTile();
 		Assert.assertEquals(title, "Cogmento CRM");
 	}
 
-	@Test()
+	@Test(priority = 1)
 	public void forgottenPasswordLinkTest() {
 		boolean forgottenPasswordLinkFlag = loginPage.validateForgotYourPasswordLink();
 		Assert.assertTrue(forgottenPasswordLinkFlag);

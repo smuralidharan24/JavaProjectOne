@@ -1,0 +1,170 @@
+package TestNGWithExtentReports.TestNGWithExtentReports;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
+
+import org.apache.tools.ant.util.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
+
+public class GoogleTestWithExtendReports {
+
+	WebDriver driver;
+	public LocalDateTime dateTime = LocalDateTime.now();
+	public ExtentHtmlReporter htmlReporter;
+	public ExtentReports extent;
+	public ExtentTest test;
+
+	@BeforeSuite // Step 1
+	public void setUp() {
+		System.setProperty("webdriver.chrome.driver", "F:/Murali/Selenium/chromedriver_win32/chromedriver.exe");
+		DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
+		System.out.println("**********START*************" + dateTime.format(formatter) + "****************");
+	}
+
+	@BeforeTest
+	public void setExtent() {
+		// specify location of the report
+		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/test-output/myReport.html");
+
+		htmlReporter.config().setDocumentTitle("Automation Report"); // Tile of report
+		htmlReporter.config().setReportName("Google Testing"); // Name of the report
+		htmlReporter.config().setTheme(Theme.DARK);
+
+		extent = new ExtentReports();
+		extent.attachReporter(htmlReporter);
+
+		// Passing General information
+		String javaVersion = System.getProperty("java.version");
+		String osName = System.getProperty("os.name");
+		String osArch = System.getProperty("os.arch");
+		String osVersion = System.getProperty("os.version");
+		String userName = System.getProperty("user.name");
+
+		extent.setSystemInfo("Java Version", javaVersion);
+		extent.setSystemInfo("Hostname", "localhost");
+		extent.setSystemInfo("OS Name", osName);
+		extent.setSystemInfo("OS Arch", osArch);
+		extent.setSystemInfo("OS Version", osVersion);
+		extent.setSystemInfo("Environemnt", "QA");
+		extent.setSystemInfo("User", userName);
+	}
+
+	@BeforeMethod
+	public void launchBrowser() {
+
+		driver = new ChromeDriver(); // Launch Chrome driver
+
+		driver.manage().window().maximize(); // maximize windows
+		driver.manage().deleteAllCookies(); // delete all cookies
+		// dynamic wait time
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.get("http://google.co.uk");
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+	}
+
+	@Test(priority = 1, groups = "Group1")
+	public void googleTitleTest() {
+		test = extent.createTest("googleTitleTest");
+		String title = driver.getTitle();
+		System.out.println("Title of the browser is :" + title);
+	}
+
+	@Test(priority = 1, groups = "Group1")
+	public void googleLogoTest() {
+		test = extent.createTest("googleLogoTest");
+		boolean isLogoDisplayed = driver.findElement(By.id("hplogo")).isDisplayed();
+		System.out.println("Logo is Displayed::" + isLogoDisplayed);
+	}
+
+	@Test(priority = 2, groups = "Group2")
+	public void gmailLinkTest() {
+		test = extent.createTest("storeLinkTest");
+		test.createNode("Valid gmailLinkTest");
+		boolean isgmailLinkDisplayed = driver.findElement(By.linkText("Gmail123")).isDisplayed();
+		System.out.println("Gmail link is Displayed::" + isgmailLinkDisplayed);
+		Assert.assertEquals(true, isgmailLinkDisplayed);
+
+		test.createNode("Invalid gmailLinkTest");
+		Assert.assertTrue(true);
+	}
+
+	@Test(priority = 2, groups = "Group2")
+	public void storeLinkTest() {
+		test = extent.createTest("storeLinkTest");
+		test.createNode("Valid storeLinkTest");
+		boolean isStoreLinkDisplayed = driver.findElement(By.linkText("Store123")).isDisplayed();
+		System.out.println("Store link is Displayed::" + isStoreLinkDisplayed);
+		Assert.assertEquals(true, isStoreLinkDisplayed);
+
+		test.createNode("Valid storeLinkTest");
+		Assert.assertTrue(true);
+	}
+
+	@Test(priority = 3, groups = "Group3")
+	public void imagesLinkTest() {
+		test = extent.createTest("imagesLinkTest");
+		boolean isImagesLinkDisplayed = driver.findElement(By.linkText("Images")).isDisplayed();
+		System.out.println("Images link is Displayed::" + isImagesLinkDisplayed);
+	}
+
+	@AfterMethod
+	public void tearDown(ITestResult result) throws IOException {
+		if (result.getStatus() == ITestResult.FAILURE) {
+			test.log(Status.FAIL, "TEST CASE FAILED IS " + result.getName()); // to add name in extent report
+			test.log(Status.FAIL, "TEST CASE FAILED IS " + result.getThrowable()); // to add error/exception in extent
+																					// report
+			String screenshotPath = GoogleTestWithExtendReports.getScreenshot(driver, result.getName());
+			test.addScreenCaptureFromPath(screenshotPath);// adding screen shot
+		} else if (result.getStatus() == ITestResult.SKIP) {
+			test.log(Status.SKIP, "Test Case SKIPPED IS " + result.getName());
+		} else if (result.getStatus() == ITestResult.SUCCESS) {
+			test.log(Status.PASS, "Test Case PASSED IS " + result.getName());
+		}
+		System.out.println("***********************************************************");
+		driver.quit();
+	}
+
+	@AfterTest // Step 8
+	public void deleteAllCookies() {
+		DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
+		System.out.println("*********THE END*************" + dateTime.format(formatter) + "****************");
+		extent.flush();
+
+	}
+
+	public static String getScreenshot(WebDriver driver, String screenshotName) throws IOException {
+		String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		File source = ts.getScreenshotAs(OutputType.FILE);
+		// after execution, you could see a folder "FailedTestsScreenshots" under src
+		// folder
+		String destination = System.getProperty("user.dir") + "/Screenshots/" + screenshotName + dateName + ".png";
+		File finalDestination = new File(destination);
+		FileUtils.getFileUtils().copyFile(source, finalDestination);
+		return destination;
+	}
+}
